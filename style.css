@@ -349,41 +349,22 @@ body {
   font-size: 15px;
 }
 
-.image-row {
-  display: flex;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-/* .image-container {
-  flex: 1;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.image-container img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 5px;
-} */
-
-
-div.scroll-container {
-  overflow: auto;
-  white-space: nowrap;
-  padding: 10px;
-}
-
-div.scroll-container img {
-  padding: 10px;
-  width: 200px;
-  border-radius: 15px;
-}
-
-
 @media screen and (max-width: 768px) {
   .image-row {
     flex-direction: column;
   }
+}
+
+.carousel-cell{
+  width: 200px;
+  height: 200px;
+  margin-right: 10px;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center center;
+}
+
+.carousel-cell:before{
+  display: block;
+  content: '';
 }
