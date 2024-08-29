@@ -355,16 +355,10 @@ body {
   }
 }
 
-.carousel-cell{
-  width: 200px;
-  height: 200px;
-  margin-right: 10px;
-  border-radius: 15px;
-  background-size: cover;
-  background-position: center center;
-}
 
-.carousel-cell:before{
-  display: block;
-  content: '';
+.carousel-item img{
+  border-radius: 5px;
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
 }
