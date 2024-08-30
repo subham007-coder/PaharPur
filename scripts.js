@@ -1,41 +1,62 @@
-// Function to initialize a carousel
-function initCarousel(imgList, scrollLeft, scrollRight) {
-    // Auto-scroll every 2 seconds
-    let autoScroll = setInterval(() => {
-        if (imgList.scrollLeft + imgList.clientWidth >= imgList.scrollWidth) {
-            imgList.scrollTo({ left: 0, behavior: 'smooth' }); // Scroll back to start
-        } else {
-            imgList.scrollBy(750, 0); // Scroll to the right
-        }
-    }, 2000);
+const carousels = document.querySelectorAll(".carousel");
 
-    // Pause auto-scroll on hover
-    imgList.addEventListener('mouseenter', () => clearInterval(autoScroll));
-    imgList.addEventListener('mouseleave', () => {
-        autoScroll = setInterval(() => {
-            if (imgList.scrollLeft + imgList.clientWidth >= imgList.scrollWidth) {
-                imgList.scrollTo({ left: 0, behavior: 'smooth' });
+carousels.forEach((carousel, index) => {
+    const dots = document.querySelectorAll(".dots")[index].querySelectorAll(".dot");
+    let isDragStart = false, prevPageX, prevScrollLeft;
+    let autoSlideInterval;
+
+    const updateDots = () => {
+        const imgWidth = carousel.querySelector("img").clientWidth + 14;
+        const activeIndex = Math.round(carousel.scrollLeft / imgWidth);
+        dots.forEach(dot => dot.classList.remove("active"));
+        if (dots[activeIndex]) dots[activeIndex].classList.add("active");
+    };
+
+    const dragStart = (e) => {
+        isDragStart = true;
+        prevPageX = e.pageX;
+        prevScrollLeft = carousel.scrollLeft;
+        clearInterval(autoSlideInterval); // Stop auto-slide while dragging
+    }
+
+    const dragging = (e) => {
+        if (!isDragStart) return;
+        e.preventDefault();
+        let positionDiff = e.pageX - prevPageX;
+        carousel.scrollLeft = prevScrollLeft - positionDiff;
+        updateDots(); // Update dots while dragging
+    }
+
+    const dragStop = () => {
+        isDragStart = false;
+        autoSlide(); // Restart auto-slide after dragging
+    }
+
+    const autoSlide = () => {
+        autoSlideInterval = setInterval(() => {
+            const imgWidth = carousel.querySelector("img").clientWidth + 14; // Image width + margin
+            const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+            if (carousel.scrollLeft >= maxScrollLeft) {
+                carousel.scrollLeft = 0; // Loop back to start
             } else {
-                imgList.scrollBy(750, 0);
+                carousel.scrollLeft += imgWidth; // Slide to the next image
             }
-        }, 2000);
+            updateDots(); // Update dots after auto-slide
+        }, 2000); // Slide every 2 seconds
+    }
+
+    carousel.addEventListener("mousedown", dragStart);
+    carousel.addEventListener("mousemove", dragging);
+    carousel.addEventListener("mouseup", dragStop);
+    carousel.addEventListener("mouseleave", dragStop); // Stop dragging when the cursor leaves the carousel
+
+    dots.forEach((dot, dotIndex) => {
+        dot.addEventListener("click", () => {
+            carousel.scrollLeft = dotIndex * (carousel.querySelector("img").clientWidth + 14); // Jump to the selected slide
+            updateDots(); // Update dots after clicking
+        });
     });
 
-    // Manual scroll with buttons
-    scrollRight.addEventListener('click', () => imgList.scrollBy(750, 0));
-    scrollLeft.addEventListener('click', () => imgList.scrollBy(-750, 0));
-}
-
-// Initialize the first carousel
-initCarousel(
-    document.getElementById('imgList'),
-    document.getElementById('scroll-left'),
-    document.getElementById('scroll-right')
-);
-
-// Initialize the second carousel
-initCarousel(
-    document.getElementById('imgListt'),
-    document.getElementById('scroll-leftt'),
-    document.getElementById('scroll-rightt')
-);
+    autoSlide();
+    updateDots(); // Initialize dots on load
+});

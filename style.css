@@ -364,56 +364,52 @@ body {
 
 
 
-section {
-  margin-top: 2.5%;
+
+.body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
 }
 
-.scroll-arrow {
-  width: 10%;
-  display: inline-block;
-  position: relative;
-  vertical-align: middle;
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
-  opacity: 0.5;
-  font-size: 34px;
-  transition: 0.2s;
+.wrapper{
+  max-width: 450px;
 }
 
-.scroll-arrow:hover {
-  transition: 0.2s;
-  opacity: 1;
-}
-
-ul {
-  width: 60%;
-  scroll-behavior: smooth;
-  display: inline-block;
-  position: relative;
-  vertical-align: middle;
-  text-align: center;
-  overflow-x: scroll;
-  overflow-y: hidden;
+.wrapper .carousel{
   white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
+  font-size: 0px;
+  cursor: pointer;
+  overflow: hidden;
 }
 
-ul::-webkit-scrollbar {
-  display: none;
+.carousel img{
+  height: 240px;
+  object-fit: cover;
+  width: calc(100% / 2);
+  margin-left: 14px;
+  border-radius: 5px;
 }
 
-li {
-  list-style: none;
+.carousel img:first-child{
+  margin-left: 0px;
+}
+
+.dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dots .dot {
   display: inline-block;
-  position: relative;
-  vertical-align: middle;
-  width: 20%;
-  margin-left: 1.5%;
-  margin-right: 1.5%;
-  transition: 0.2s;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-li, img {
-  width: 163px;
+.dots .dot.active {
+  background-color: #717171;
 }
