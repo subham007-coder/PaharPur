@@ -126,16 +126,18 @@ body {
 }
 
 .foundation-section h1 {
-  font-style: italic;
+  /* font-style: italic; */
+  font-weight: 600;
   font-size: 2em;
-  color: #cc6600;
+  color: #C7672B;
   line-height: 1.4;
   margin-bottom: 10px;
 }
 
 .foundation-section h1 span {
   font-weight: normal;
-  color: #cc6600;
+  color: #C7672B;
+  font-weight: 600;
 }
 
 .subheading {
@@ -149,6 +151,7 @@ body {
   font-size: 15px;
   color: #333;
   line-height: 1.6;
+  text-align: justify;
 }
 
 @media screen and (max-width: 768px) {
@@ -197,13 +200,14 @@ body {
 
 .text-content h2 {
   font-size: 24px;
-  color: #cc6600;
+  color: #C7672B;
+  font-weight: 600;
   margin-bottom: 10px;
   line-height: 1.4;
 }
 
 .text-content h2 span {
-  font-weight: normal;
+  font-weight: 600;
   /* color: #ff7f50; */
 }
 
@@ -347,6 +351,7 @@ body {
   color: #333;
   line-height: 1.6;
   font-size: 15px;
+  text-align: justify;
 }
 
 @media screen and (max-width: 768px) {
