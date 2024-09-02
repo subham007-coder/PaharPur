@@ -237,11 +237,10 @@ body {
   filter: grayscale(0%);
 }
 
-.overlay-text {
+/* .overlay-text {
   position: absolute;
   top: 242px;
   left: 84px;
-  /* transform: translate(-50%, -50%); */
   z-index: 2;
   background-color: #007bff;
   color: #fff;
@@ -251,7 +250,7 @@ body {
   font-size: 10px;
   width: max-content;
   border-radius: 5px;
-}
+} */
 
 @media screen and (max-width: 768px) {
   .text-content,
@@ -274,10 +273,10 @@ body {
   .text-content {
     width: 100%;
   }
-  .overlay-text {
+  /* .overlay-text {
     top: 80%;
     left: 49%;
-  }
+  } */
   .image-content img {
     width: 280px;
   }
