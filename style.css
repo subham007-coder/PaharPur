@@ -38,13 +38,27 @@ body {
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-.ban_text strong {
-  font: 20px;
+
+.b-logo {
+  position: absolute;
+  top: 12%;
+  right: 12%;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.b-logo img{
+  width: 50px;
+  border-radius: 50%;
+}
+
+.ban_text strong h5 {
   color: #fff;
   text-transform: uppercase;
-}
-.ban_text strong span {
-  font: 20px;
+  font-size: 16px;
   letter-spacing: 1px;
 }
 
@@ -54,64 +68,65 @@ body {
     }
   } */
 
-@media (min-width: 992px) and (max-width: 1199px) {
-  /* .ban_text p {
+/* @media (min-width: 992px) and (max-width: 1199px) {
+  .ban_text p {
       font-size: 17px;
-    } */
+    }
   .ban_text strong {
-    font-size: 20px;
+    font-size: 2vw;
     line-height: 60px;
   }
   .ban_text strong span {
     font-size: 20px;
   }
-  /* .ban_text a {
+  .ban_text a {
       font-size: 16px;
       line-height: 19px;
-    } */
-}
+    }
+} */
 
-@media only screen and (max-width: 991px) {
+/* @media only screen and (max-width: 991px) {
   .ban_text strong {
-    font-size: 20px;
-    /* line-height: 40px; */
+    font-size: 2vw;
   }
   .ban_text strong span {
     font-size: 20px;
     line-height: 35px;
     letter-spacing: 2px;
   }
-  /* .ban_text p {
+   .ban_text p {
       font-size: 14px;
       line-height: 20px;
     }
     .ban_text a {
       font-size: 13.39px;
       line-height: 15px;
-    } */
-}
+    }
+} */
+ 
 @media only screen and (max-width: 767px) {
   .ban_img img {
-    min-height: 290px;
+    /* min-height: 290px; */
     object-fit: cover;
   }
 }
 @media only screen and (max-width: 575px) {
   .ban_text strong {
-    background: rgba(0, 0, 0, 0.324);
+    background: rgba(0, 0, 0, 0);
     padding: 10px;
     width: 100%;
     display: block;
   }
 }
 @media only screen and (max-width: 480px) {
-  .ban_text strong span {
+  /* .ban_text strong span {
     font-size: 20px;
     line-height: 31px;
     letter-spacing: 1px;
-  }
+  } */
   .ban_text {
-    left: 2%;
+    left: 11%;
+    max-width: 50%;
   }
 }
 
