@@ -37,7 +37,7 @@ body {
 }
 .ban_text {
   position: absolute;
-  top: 28%;
+  top: 22%;
   left: 6%;
   -ms-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
@@ -188,7 +188,7 @@ body {
 .subheading {
   font-size: 16px;
   font-weight: bold;
-  color: #333;
+  color: #5D87BC;
   margin-bottom: 20px;
   font-style: italic;
 }
@@ -255,6 +255,7 @@ body {
 
 .text-content h2 span {
   font-weight: 600;
+  font-size: 19px;
   /* color: #ff7f50; */
 }
 
@@ -262,14 +263,23 @@ body {
   margin-bottom: 15px;
 }
 
+.text-content p span{
+  font-weight: 700;
+}
+
 .image-content {
   flex: 1 1 50%;
   display: flex;
   position: relative;
   width: 50%;
+  align-items: center;
   justify-content: center;
   padding: 22px;
   /* margin-right: -32px; */
+}
+
+#of-contain{
+  object-fit: cover;
 }
 
 .image-content img {
@@ -379,11 +389,11 @@ body {
 }
 
 .text-content h2 {
-  font-size: 24px;
+  font-size: 20px;
   font-style: italic;
   color: #cc6600;
   margin-bottom: 10px;
-  line-height: 1.4;
+  line-height: 1.2;
 }
 
 .text-content h3 {
