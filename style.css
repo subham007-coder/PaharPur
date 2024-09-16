@@ -191,13 +191,6 @@ body {
   font-style: italic;
 }
 
-/* .content {
-  font-size: 15px;
-  color: #333;
-  line-height: 1.6;
-  text-align: justify;
-} */
-
 @media screen and (max-width: 768px) {
   .foundation-section {
     padding: 15px;
