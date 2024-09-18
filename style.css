@@ -424,7 +424,7 @@ body {
   color: #333;
   line-height: 1.6;
   font-size: 15px;
-  max-width: 523px;
+  /* max-width: 523px; */
   text-align: justify;
 }
 
